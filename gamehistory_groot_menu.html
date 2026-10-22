@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game History • 1970–2026</title>
+<style>
+:root{--bg:#070b1c;--panel:#101832;--panel2:#151f40;--cyan:#35e7ff;--pink:#ff4fd8;--text:#f4f7ff;--muted:#a8b4d5;--line:#29365f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#15224c 0,#070b1c 58%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px clamp(16px,5vw,60px);border-bottom:1px solid #263252;gap:12px}
+.logo{font-weight:900;letter-spacing:1px}.logo span{color:var(--cyan)}.pill{font-size:.8rem;color:var(--cyan);border:1px solid #286a84;border-radius:99px;padding:6px 10px}
+main{max-width:1200px;margin:auto;padding:clamp(12px,2.5vh,28px) 18px 28px;min-height:calc(100vh - 130px)}.screen{display:none}.screen.active{display:block}
+#menu.active{min-height:calc(100vh - 190px)}
+#menu .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,18px);margin-top:clamp(14px,3vh,28px)}
+#menu .card{min-height:clamp(125px,23vh,205px);padding:clamp(14px,2.5vw,26px)}
+#menu .card .icon{font-size:clamp(1.6rem,3vw,2.4rem)}
+#menu .card h3{font-size:clamp(1rem,2.2vw,1.35rem);margin:8px 0 5px}
+#menu .card p{font-size:clamp(.78rem,1.5vw,.95rem)}
+@media(max-width:480px){header{padding:12px 14px}main{padding:14px 12px 20px}#menu.active{min-height:calc(100vh - 100px)}#menu .grid{gap:10px}#menu .card{min-height:clamp(130px,21vh,175px);padding:12px 10px}#menu .card p{line-height:1.35}.back{margin-bottom:12px}}
+.hero{text-align:center;padding:clamp(30px,8vw,78px) 12px 44px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:3px;font-size:.8rem;font-weight:800}
+h1{font-size:clamp(2.4rem,8vw,5rem);line-height:1.02;margin:16px 0;background:linear-gradient(90deg,#fff,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:var(--muted);max-width:650px;margin:0 auto 28px;line-height:1.7}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:13px 18px;font-weight:800;transition:transform .15s,filter .15s}button:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.primary{background:linear-gradient(100deg,var(--cyan),#8d8bff);color:#071022;box-shadow:0 0 26px #35e7ff2b}.secondary{background:#1b2749;color:var(--text);border:1px solid #34436d}.back{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:24px}
+.card{background:linear-gradient(145deg,#141f40,#0d142b);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:left;color:var(--text);min-height:145px}
+.card .icon{font-size:1.8rem}.card h3{margin:10px 0 6px}.card p{color:var(--muted);font-size:.92rem;line-height:1.5;margin:0}
+.section-title{font-size:clamp(1.8rem,5vw,2.7rem);margin:8px 0}.muted{color:var(--muted);line-height:1.65}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.toolbar input,.toolbar select{background:#101832;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit}
+.game-card{display:flex;align-items:flex-start;gap:12px;transition:border-color .15s,transform .15s}.game-card:hover{border-color:var(--line)}.game-card .year{color:var(--cyan);font-weight:900;min-width:52px}.game-card h3{margin:0 0 6px}.game-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}.fav{margin-left:auto;background:transparent;color:#ff82df;padding:4px;font-size:1.3rem}
+.character-visual{width:100%;max-width:280px;aspect-ratio:1;border-radius:14px;background:radial-gradient(circle at 50% 40%,#273b75,#101832);display:grid;place-items:center;font-size:5rem;border:1px solid var(--line)}.character-image{width:100%;max-width:280px;max-height:280px;object-fit:contain;border-radius:14px;background:#fff;padding:8px}.detail-layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;align-items:start;margin:18px 0}.image-caption{font-size:.85rem}border:1px solid var(--line);padding:24px;border-radius:18px;margin-top:20px}.detail h3{font-size:1.7rem;margin-top:0}.tag{display:inline-block;border:1px solid #286a84;color:var(--cyan);padding:5px 9px;border-radius:99px;font-size:.8rem;margin:4px 5px 4px 0}
+.question{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:15px}.answers button{text-align:left}.status{color:var(--cyan);font-weight:800;margin-top:12px}
+footer{text-align:center;color:#7885aa;padding:25px;border-top:1px solid #202b4c;font-size:.85rem}
+</style>
+</head>
+<body>
+<header><div class="logo">🎮 GAME<span>HISTORY</span></div><div class="pill">1970 — 2026</div></header>
+<main>
+<section id="home" class="screen active">
+ <div class="hero"><div class="eyebrow">Een reis door de gamegeschiedenis</div><h1>PRESS START</h1><p class="subtitle">Van de eerste arcadeklassiekers tot moderne open werelden. Ontdek hoe videogames veranderden tussen 1970 en 2026.</p><button class="primary" onclick="show('menu')">▶ START</button></div>
+</section>
+<section id="menu" class="screen">
+ <button class="secondary back" onclick="show('home')">← Terug</button>
+ <div class="eyebrow">Hoofdmenu</div><h2 class="section-title">Kies je avontuur</h2><p class="muted">Alles direct bereikbaar — kies hieronder.</p>
+ <div class="grid">
+  <button class="card" onclick="show('eras')"><div class="icon">🕹️</div><h3>Game-tijdlijn</h3><p>Bekijk belangrijke games en momenten per tijdperk.</p></button>
+  <button class="card" onclick="show('games')"><div class="icon">🎮</div><h3>Games ontdekken</h3><p>Zoek games en voeg ze toe aan je favorieten.</p></button>
+  <button class="card" onclick="show('quiz')"><div class="icon">🧠</div><h3>Quiz</h3><p>Test wat je weet over de gamegeschiedenis.</p></button>
+  <button class="card" onclick="show('favorites')"><div class="icon">⭐</div><h3>Favorieten</h3><p>Bekijk de games die je hebt opgeslagen.</p></button>
+ </div>
+</section>
+<section id="eras" class="screen">
+ <button class="secondary back" onclick="show('menu')">← Menu</button><div class="eyebrow">Van pixels naar werelden</div><h2 class="section-title">Kies een tijdperk</h2>
+ <div class="grid" id="eraGrid"></div><div id="eraDetails"></div>
+</section>
+<section id="games" class="screen">
+ <button class="secondary back" onclick="show('menu')">← Menu</button><div class="eyebrow">Gamebibliotheek</div><h2 class="section-title">Games ontdekken</h2>
+ <div class="toolbar"><input id="search" placeholder="Zoek een game..." oninput="renderGames()"><select id="filter" onchange="renderGames()"><option value="all">Alle tijdperken</option><option>1970–1989</option><option>1990–1999</option><option>2000–2009</option><option>2010–2019</option><option>2020–2026</option></select></div>
+ <div class="grid" id="gameGrid"></div><div id="gameDetails"></div>
+</section>
+<section id="favorites" class="screen">
+ <button class="secondary back" onclick="show('menu')">← Menu</button><div class="eyebrow">Jouw collectie</div><h2 class="section-title">⭐ Favorieten</h2><div class="grid" id="favGrid"></div>
+</section>
+<section id="quiz" class="screen">
+ <button class="secondary back" onclick="show('menu')">← Menu</button><div class="eyebrow">Kennischeck</div><h2 class="section-title">Gamequiz</h2><p class="muted">Kies het juiste antwoord. Je score wordt bijgehouden.</p><div id="quizBox"></div>
+</section>
+</main><footer>GAMEHISTORY • 1970–2026</footer>
+<script>
+const games=[
+{year:1972,name:"Pong",platform:"Arcade",era:"1970–1989",desc:"Een van de bekendste vroege arcadegames. Twee spelers slaan een digitaal balletje heen en weer.",fact:"Pong hielp videogames populair te maken in speelhallen."},
+{year:1978,name:"Space Invaders",platform:"Arcade",era:"1970–1989",desc:"Verdedig de aarde tegen rijen buitenaardse indringers.",fact:"De game werd een enorm succes in arcades."},
+{year:1980,name:"Pac-Man",platform:"Arcade",era:"1970–1989",desc:"Navigeer door een doolhof, eet puntjes en ontwijk spoken.",fact:"Pac-Man werd een wereldwijd popcultuuricoon."},
+{year:1985,name:"Super Mario Bros.",platform:"NES",era:"1970–1989",desc:"Mario rent en springt door levels om prinses Peach te redden.",fact:"De game hielp het platformgenre vormgeven."},
+{year:1989,name:"Tetris",platform:"Game Boy / diverse",era:"1970–1989",desc:"Draai en stapel vallende blokken om volledige lijnen te maken.",fact:"De eenvoudige puzzelregels maakten het spel wereldwijd populair."},
+{year:1991,name:"Sonic the Hedgehog",platform:"Mega Drive",era:"1990–1999",desc:"Race door kleurrijke levels met de supersnelle blauwe egel.",fact:"Sonic werd een bekende mascotte voor Sega."},
+{year:1996,name:"Pokémon Red & Blue",platform:"Game Boy",era:"1990–1999",desc:"Vang Pokémon, train je team en daag andere trainers uit.",fact:"De reeks groeide uit tot een wereldwijd fenomeen."},
+{year:1996,name:"Super Mario 64",platform:"Nintendo 64",era:"1990–1999",desc:"Verken een 3D-kasteel en spring door open levels.",fact:"De besturing hielp de weg wijzen voor 3D-platformgames."},
+{year:1998,name:"The Legend of Zelda: Ocarina of Time",platform:"Nintendo 64",era:"1990–1999",desc:"Een avonturenspel waarin Link een grote 3D-wereld verkent.",fact:"De lock-on-besturing werd invloedrijk voor 3D-avonturengames."},
+{year:2001,name:"Halo: Combat Evolved",platform:"Xbox",era:"2000–2009",desc:"Een sciencefiction-shooter met een campagne en multiplayer.",fact:"Halo werd een belangrijke reeks voor Xbox."},
+{year:2004,name:"World of Warcraft",platform:"PC",era:"2000–2009",desc:"Een online rollenspel waarin spelers samen een fantasiewereld verkennen.",fact:"Het spel bracht miljoenen spelers samen in een online wereld."},
+{year:2004,name:"Half-Life 2",platform:"PC",era:"2000–2009",desc:"Een verhaalgedreven shooter met natuurkundige puzzels.",fact:"De physics-gameplay maakte veel indruk bij de release."},
+{year:2009,name:"Minecraft",platform:"Meerdere platforms",era:"2000–2009",desc:"Bouw, ontdek en overleef in een wereld van blokken.",fact:"Het spel werd bekend om vrijheid en creativiteit."},
+{year:2006,name:"Roblox",platform:"PC / mobiel / consoles",era:"2000–2009",desc:"Speel ervaringen die door andere gebruikers zijn gemaakt en maak zelf games.",fact:"Roblox is uitgegroeid tot een groot platform met door gebruikers gemaakte ervaringen."},
+{year:1992,name:"Kirby's Dream Land",platform:"Game Boy",era:"1990–1999",desc:"Help Kirby vijanden verslaan en eten terug te halen in Dream Land.",fact:"Dit was Kirby's eerste game."},
+{year:2018,name:"Kirby Star Allies",platform:"Nintendo Switch",era:"2010–2019",desc:"Werk samen met vrienden en gebruik de krachten van Kirby en zijn bondgenoten.",fact:"Je kunt samen met maximaal vier spelers avonturen beleven."},
+{year:2022,name:"Kirby and the Forgotten Land",platform:"Nintendo Switch",era:"2020–2026",desc:"Verken een mysterieuze wereld en red Waddle Dees met Kirby.",fact:"Dit is Kirby's eerste volledig 3D-platformavontuur."},
+{year:2011,name:"The Elder Scrolls V: Skyrim",platform:"Meerdere platforms",era:"2010–2019",desc:"Verken een uitgestrekte fantasiewereld vol draken en quests.",fact:"Spelers konden hun eigen avonturenroute kiezen."},
+{year:2013,name:"Grand Theft Auto V",platform:"PlayStation / Xbox / PC",era:"2010–2019",desc:"Een openwereldgame die zich afspeelt in de fictieve staat San Andreas.",fact:"De wereld bevat veel activiteiten naast het hoofdverhaal."},
+{year:2017,name:"The Legend of Zelda: Breath of the Wild",platform:"Nintendo Switch / Wii U",era:"2010–2019",desc:"Verken een grote wereld en los uitdagingen op op creatieve manieren.",fact:"De vrijheid van verkennen was een belangrijk kenmerk."},
+{year:2017,name:"Fortnite",platform:"Meerdere platforms",era:"2010–2019",desc:"Een online game die bekend werd door Battle Royale en live-evenementen.",fact:"Seizoenen en samenwerkingen veranderden de game regelmatig."},
+{year:2018,name:"Red Dead Redemption 2",platform:"PlayStation / Xbox / PC",era:"2010–2019",desc:"Een western-avontuur met een grote, gedetailleerde open wereld.",fact:"De wereld reageert op veel acties van de speler."},
+{year:2020,name:"Animal Crossing: New Horizons",platform:"Nintendo Switch",era:"2020–2026",desc:"Bouw een eilandgemeenschap op je eigen tempo.",fact:"Het spel werd populair tijdens de periode van thuisblijven in 2020."},
+{year:2020,name:"The Last of Us Part II",platform:"PlayStation",era:"2020–2026",desc:"Een verhaalgedreven actie-avonturenspel.",fact:"Het spel kreeg veel aandacht voor zijn verhaal en animaties."},
+{year:2022,name:"Elden Ring",platform:"Meerdere platforms",era:"2020–2026",desc:"Verken een uitgestrekte fantasiewereld en neem het op tegen uitdagende vijanden.",fact:"Het combineert een open wereld met uitdagende gevechten."},
+{year:2023,name:"The Legend of Zelda: Tears of the Kingdom",platform:"Nintendo Switch",era:"2020–2026",desc:"Bouw voorwerpen en ontdek nieuwe manieren om Hyrule te verkennen.",fact:"Creatief bouwen is een belangrijk onderdeel van de gameplay."},
+{year:2023,name:"Baldur's Gate 3",platform:"PC / PlayStation / Xbox",era:"2020–2026",desc:"Een rollenspel waarin keuzes en dobbelsteenworpen het avontuur beïnvloeden.",fact:"Veel quests kunnen op verschillende manieren worden opgelost."},
+{year:2025,name:"Games van het moderne tijdperk",platform:"Meerdere platforms",era:"2020–2026",desc:"Moderne games combineren vaak online spelen, updates en uitgebreide werelden.",fact:"Wat populair is, verandert snel; nieuwe releases blijven de geschiedenis aanvullen."},
+{year:2026,name:"Gamegeschiedenis van 2026",platform:"Meerdere platforms",era:"2020–2026",desc:"Ontdek hoe games zich in 2026 verder ontwikkelen met nieuwe technologie en speelervaringen.",fact:"Dit onderdeel is een overzicht van het tijdperk, geen specifieke game-release."}
+];
+const eras=[
+{range:"1970–1989",title:"De arcadejaren",icon:"🕹️",desc:"Eenvoudige regels, hoge scores en de opkomst van thuisconsoles.",games:["Pong","Space Invaders","Pac-Man","Super Mario Bros.","Tetris"]},
+{range:"1990–1999",title:"De 3D-revolutie",icon:"💿",desc:"Krachtigere consoles, 3D-werelden en grote gamefranchises.",games:["Sonic the Hedgehog","Pokémon Red & Blue","Super Mario 64","The Legend of Zelda: Ocarina of Time"]},
+{range:"2000–2009",title:"Online en open werelden",icon:"🌐",desc:"Online multiplayer, grotere werelden en nieuwe manieren om samen te spelen.",games:["Halo: Combat Evolved","World of Warcraft","Half-Life 2","Minecraft"]},
+{range:"2010–2019",title:"Games voor iedereen",icon:"🎧",desc:"Streaming, esports, open werelden en games als sociale ontmoetingsplek.",games:["Skyrim","Grand Theft Auto V","Breath of the Wild","Fortnite","Red Dead Redemption 2"]},
+{range:"2020–2026",title:"Een nieuw tijdperk",icon:"🚀",desc:"Creatieve gameplay, online werelden en steeds rijkere spelervaringen.",games:["Animal Crossing: New Horizons","Elden Ring","Tears of the Kingdom","Baldur's Gate 3"]}
+];
+let favorites=JSON.parse(localStorage.getItem('gh-favs')||'[]'),score=0,qIndex=0;
+const starterFavorites=["Roblox","Minecraft","Kirby and the Forgotten Land","Kirby Star Allies","Kirby's Dream Land"];
+favorites=[...new Set([...starterFavorites,...favorites])];
+localStorage.setItem('gh-favs',JSON.stringify(favorites));
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='favorites')renderFavs();if(id==='quiz')renderQuiz()}
+function characterImage(g){
+ const imgs={
+ "Pac-Man":"https://www.smashbros.com/images/og/pac-man.jpg",
+ "Sonic the Hedgehog":"https://www.reimarufiles.com/wp-content/uploads/2022/04/15.png",
+ "Super Mario Bros.":"https://img.atwiki.jp/ninten210/pub/MARIO.jpg"
+ };
+ return imgs[g.name]||"";
+}
+function gameCard(g){const name=g.name.replace(/'/g,"\\'");return `<div class="card game-card"><div class="year">${g.year}</div><div><h3>${g.name}</h3><p>${g.platform}</p><p>${g.desc}</p></div><button class="fav" title="${favorites.includes(g.name)?'Verwijder uit favorieten':'Voeg toe aan favorieten'}" aria-label="${favorites.includes(g.name)?'Verwijder uit favorieten':'Voeg toe aan favorieten'}" onclick="toggleFav('${name}')">${favorites.includes(g.name)?'★':'☆'}</button></div>`}
+function renderGames(){let q=(document.getElementById('search').value||'').toLowerCase(),f=document.getElementById('filter').value;let arr=games.filter(g=>(g.name.toLowerCase().includes(q)||g.platform.toLowerCase().includes(q))&&(f==='all'||g.era===f));document.getElementById('gameGrid').innerHTML=arr.map(gameCard).join('')||'<p class="muted">Geen games gevonden. Probeer een andere zoekterm.</p>'}
+const characterStories={"Pong": {"character": "De twee batjes", "story": "Pong heeft geen verhaalpersonage. Jij bestuurt een batje en speelt een digitale versie van tafeltennis: houd de bal in het spel en probeer te scoren."}, "Space Invaders": {"character": "De verdediger van de aarde", "story": "Je bestuurt een verdedigingskanon en probeert de aarde te beschermen tegen een groep buitenaardse indringers."}, "Pac-Man": {"character": "Pac-Man", "story": "Pac-Man is een geel personage dat door doolhoven reist om puntjes te eten. Hij ontwijkt spoken en kan met speciale energieballetjes tijdelijk terugvechten."}, "Super Mario Bros.": {"character": "Mario en prinses Peach", "story": "Mario is een held uit het Mushroom Kingdom. Hij rent en springt door gevaarlijke levels om prinses Peach te redden van Bowser."}, "Tetris": {"character": "De vallende blokken", "story": "Tetris heeft geen hoofdpersonage of traditioneel verhaal. Je draait en stapelt blokvormen om volledige lijnen te maken voordat het speelveld vol raakt."}, "Sonic the Hedgehog": {"character": "Sonic", "story": "Sonic is een supersnelle blauwe egel die zijn vrienden en de wereld beschermt. Hij neemt het vaak op tegen Dr. Eggman."}, "Pokémon Red & Blue": {"character": "De Pokémon-trainer", "story": "Je speelt een jonge trainer die Pokémon vangt en traint. Je reist door Kanto, daagt gyms uit en probeert kampioen te worden terwijl je Team Rocket tegenhoudt."}, "Super Mario 64": {"character": "Mario", "story": "Mario reist naar het kasteel van prinses Peach. Door schilderijen te betreden verkent hij 3D-werelden en verzamelt hij Power Stars om Bowser te verslaan."}, "The Legend of Zelda: Ocarina of Time": {"character": "Link en Zelda", "story": "Link is een jonge held die door Hyrule reist. Met hulp van prinses Zelda probeert hij Ganondorf tegen te houden en het land te beschermen."}, "Halo: Combat Evolved": {"character": "Master Chief", "story": "Master Chief is een supersoldaat die samen met de kunstmatige intelligentie Cortana strijdt tegen de Covenant. Tijdens zijn missie ontdekt hij de mysterieuze ringwereld Halo."}, "World of Warcraft": {"character": "Jouw eigen held", "story": "Je maakt je eigen held en kiest een volk en klasse. Je verkent Azeroth, voltooit opdrachten en werkt samen met andere spelers tegen grote bedreigingen."}, "Half-Life 2": {"character": "Gordon Freeman", "story": "Gordon Freeman is een wetenschapper in een wereld die wordt gecontroleerd door het Combine-regime. Met hulp van het verzet probeert hij de mensheid vrijheid terug te geven."}, "Minecraft": {"character": "Steve of Alex", "story": "Steve en Alex zijn bekende standaardpersonages, maar je kunt ook je eigen uiterlijk kiezen. Er is geen verplicht hoofdverhaal: je verzamelt materialen, bouwt, verkent en probeert te overleven."}, "The Elder Scrolls V: Skyrim": {"character": "De Dragonborn", "story": "Je speelt de Dragonborn, een held met de kracht van draken. Je verkent Skyrim, leert krachtige kreten en raakt betrokken bij de terugkeer van draken."}, "Grand Theft Auto V": {"character": "Michael, Franklin en Trevor", "story": "Het verhaal volgt drie hoofdpersonages met verschillende achtergronden. Hun levens raken verweven door overvallen, problemen en keuzes in Los Santos."}, "The Legend of Zelda: Breath of the Wild": {"character": "Link en Zelda", "story": "Link ontwaakt na een lange slaap en moet zijn herinneringen terugvinden. Hij verkent Hyrule en bereidt zich voor om Calamity Ganon te stoppen."}, "Fortnite": {"character": "Je gekozen personage", "story": "Fortnite heeft veel speelbare personages en outfits, geen vaste held voor alle modi. In Battle Royale probeer je als laatste speler of team over te blijven."}, "Red Dead Redemption 2": {"character": "Arthur Morgan", "story": "Arthur Morgan is lid van de Van der Linde-bende in het Wilde Westen. Hij worstelt met loyaliteit, overleven en wat voor persoon hij wil zijn."}, "Animal Crossing: New Horizons": {"character": "Jouw eilandbewoner", "story": "Je verhuist naar een rustig eiland en bouwt stap voor stap een gemeenschap op. Tom Nook helpt met je huis en projecten terwijl je buren leert kennen."}, "The Last of Us Part II": {"character": "Ellie", "story": "Ellie reist door een gevaarlijke wereld waarin een infectie de samenleving heeft veranderd. Het verhaal gaat over verlies, moeilijke keuzes en de gevolgen van wraak."}, "Elden Ring": {"character": "De Tarnished", "story": "Je speelt een Tarnished die de Lands Between verkent en probeert Elden Lord te worden. Je ontdekt verborgen geschiedenis en bepaalt hoe je avontuur verdergaat."}, "The Legend of Zelda: Tears of the Kingdom": {"character": "Link en Zelda", "story": "Link onderzoekt mysterieuze gebeurtenissen boven en onder Hyrule. Met nieuwe krachten combineert hij voorwerpen en bouwt hij oplossingen om het koninkrijk te helpen."}, "Baldur's Gate 3": {"character": "Jouw avonturier en metgezellen", "story": "Je maakt je eigen personage en reist met metgezellen die elk hun eigen verleden en doelen hebben. Gesprekken, dobbelsteenworpen en keuzes veranderen het verhaal."}};
+function details(name){
+ const g=games.find(x=>x.name===name); if(!g)return;
+ const img=characterImage(g), info=characterStories[g.name]||{character:'De personages en wereld',story:g.desc+' '+g.fact};
+ const icons=g.name.includes('Pokémon')?'⚡':g.name.includes('Minecraft')?'🟩':g.name.includes('Tetris')?'🧩':g.name.includes('Elden')?'🐉':g.name.includes('Fortnite')?'🎯':g.name.includes('Animal Crossing')?'🍃':g.name.includes('Halo')?'🛡️':g.name.includes('Sonic')?'🦔':g.name.includes('Mario')?'🍄':g.name.includes('Pac-Man')?'🟡':'🎮';
+ const visual=img?`<img src="${img}" alt="Afbeelding bij ${g.name}" class="character-image" onerror="this.outerHTML='<div class=&quot;character-visual&quot;>🎮</div>'">`:`<div class="character-visual" aria-label="Game-illustratie">${icons}</div>`;
+ const safeName=g.name.replace(/'/g,"\'");
+ document.getElementById('gameDetails').innerHTML=`<div class="detail"><button class="secondary" onclick="document.getElementById('gameDetails').innerHTML='';document.getElementById('gameGrid').scrollIntoView({behavior:'smooth',block:'start'})">✕ Verhaal sluiten</button><div class="detail-layout"><div>${visual}<p class="muted image-caption">Personage / game-illustratie</p></div><div><span class="tag">${g.year}</span><span class="tag">${g.era}</span><span class="tag">${g.platform}</span><h3>${g.name}</h3><p class="muted">${g.desc}</p><h3>👤 ${info.character}</h3><p class="muted">${info.story}</p><strong>🎮 Waarom is deze game bijzonder?</strong><p class="muted">${g.fact}</p><button class="primary" onclick="toggleFav('${safeName}');details('${safeName}')">${favorites.includes(g.name)?'★ Verwijder favoriet':'☆ Bewaar als favoriet'}</button></div></div></div>`;
+ document.getElementById('gameDetails').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function toggleFav(name){favorites=favorites.includes(name)?favorites.filter(x=>x!==name):[...favorites,name];localStorage.setItem('gh-favs',JSON.stringify(favorites));renderGames();renderFavs()}
+function renderFavs(){let arr=games.filter(g=>favorites.includes(g.name));document.getElementById('favGrid').innerHTML=arr.length?arr.map(gameCard).join(''):'<p class="muted">Je hebt nog geen favorieten. Ga naar Games ontdekken en tik op ☆.</p>'}
+function renderEras(){document.getElementById('eraGrid').innerHTML=eras.map((e,i)=>`<button class="card" onclick="eraDetails(${i})"><div class="icon">${e.icon}</div><h3>${e.range}</h3><p>${e.title}</p><p>${e.desc}</p></button>`).join('')}
+function eraDetails(i){let e=eras[i],list=games.filter(g=>g.era===e.range);document.getElementById('eraDetails').innerHTML=`<div class="detail"><span class="tag">${e.range}</span><h3>${e.icon} ${e.title}</h3><p class="muted">${e.desc}</p><h3>Games uit dit tijdperk</h3><div class="grid">${list.map(gameCard).join('')}</div></div>`;document.getElementById('eraDetails').scrollIntoView({behavior:'smooth',block:'nearest'})}
+const questions=[
+{q:"Welke game verscheen in 1980 en heeft een geel personage dat puntjes eet?",a:["Pac-Man","Minecraft","Halo"],correct:0,why:"Pac-Man kwam uit in 1980 en werd een arcadeklassieker."},
+{q:"Welke game staat bekend om bouwen met blokken?",a:["Tetris","Minecraft","Sonic"],correct:1,why:"In Minecraft kun je met blokken bouwen en ontdekken."},
+{q:"Welke consolegame bracht Mario in 3D naar het kasteel?",a:["Super Mario 64","Pong","Fortnite"],correct:0,why:"Super Mario 64 verscheen in 1996."},
+{q:"In welk spel vang en train je Pokémon?",a:["Elden Ring","Pokémon Red & Blue","Half-Life 2"],correct:1,why:"Pokémon Red & Blue verschenen in de jaren 90."},
+{q:"Welke game staat bekend om zijn grote fantasiewereld en uitdagende gevechten?",a:["Elden Ring","Pong","Animal Crossing"],correct:0,why:"Elden Ring verscheen in 2022."}
+];
+function renderQuiz(){if(qIndex>=questions.length){document.getElementById('quizBox').innerHTML=`<div class="detail"><h3>Quiz voltooid! 🎉</h3><p>Je score: ${score} van ${questions.length}</p><button class="primary" onclick="qIndex=0;score=0;renderQuiz()">Opnieuw spelen</button></div>`;return}let q=questions[qIndex];document.getElementById('quizBox').innerHTML=`<div class="question"><span class="tag">Vraag ${qIndex+1} van ${questions.length}</span><h3>${q.q}</h3><div class="answers">${q.a.map((a,i)=>`<button class="secondary" onclick="answer(${i})">${a}</button>`).join('')}</div><p id="answerStatus" class="status"></p><button id="nextQ" class="primary" style="display:none;margin-top:12px" onclick="qIndex++;renderQuiz()">Volgende vraag →</button></div><p class="muted">Score: ${score}</p>`}
+function answer(i){let q=questions[qIndex],el=document.getElementById('answerStatus');document.querySelectorAll('.answers button').forEach(b=>b.disabled=true);if(i===q.correct){score++;el.textContent='Goed! '+q.why}else el.textContent='Nog niet. '+q.why;document.getElementById('nextQ').style.display='inline-block'}
+renderEras();renderGames();
+</script>
+</body>
+</html>
